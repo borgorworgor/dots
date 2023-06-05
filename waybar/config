@@ -14,6 +14,7 @@
     "modules-center": [],
 
     "modules-right": [
+    	"custom/gamemode",
     	"custom/mullvad-vpn", 
 	"idle_inhibitor", 
 	"pulseaudio", 
@@ -25,9 +26,26 @@
 	"keyboard-state", 
 	"battery", 
 	"clock", 
-	"tray"
+	"tray",
+//	"custom/notifications",
+	"custom/wlogout"
     ],
     // Modules configuration
+
+    "custom/gamemode": {
+	"format": "\udb84\udf93",
+	"on-click": "~/.config/hypr/gamemode.sh"
+    },
+
+    "custom/wlogout": {
+    	"format": "\uf011    ",
+    	"on-click": "wlogout"
+    },
+
+//    "custom/notifications": {
+//	"format": "\ueaa2  ",
+//	"on-click": "swaync-client -t"
+//    },
 
     "hyprland/window": {
     	"max-length": 75,
@@ -41,13 +59,15 @@
 
     "custom/mullvad-vpn": {
 	"exec": "mullvad status",
-	"interval": 60
+	"interval": 60,
+	"on-click": "mullvad connect"
     },
 
     "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
 	"on-click": "activate",
+	"format": "{icon}",
         "format-icons": {
             "1": "",
             "2": "",
