@@ -11,13 +11,17 @@
 	"hyprland/window"
     ],
 
-    "modules-center": [],
+    "modules-center": [
+    	"clock",
+	"custom/separator",
+	"custom/weather"
+    ],
 
     "modules-right": [
     	"custom/gamemode",
     	"custom/mullvad-vpn", 
 	"idle_inhibitor", 
-	"pulseaudio", 
+	"wireplumber", 
 	"network", 
 	"cpu", 
 	"memory", 
@@ -25,12 +29,19 @@
 	"backlight", 
 	"keyboard-state", 
 	"battery", 
-	"clock", 
+	"custom/separator",
 	"tray",
-//	"custom/notifications",
+	"custom/notifications",
 	"custom/wlogout"
     ],
     // Modules configuration
+
+    "custom/weather": {
+	"format": "{}",
+	"exec": "curl 'wttr.in/pdx?format=%c%t'",
+	"interval": 6000,
+	"on-click": "firefox https://openweathermap.org/"
+    },
 
     "custom/gamemode": {
 	"format": "\udb84\udf93",
@@ -42,10 +53,10 @@
     	"on-click": "wlogout"
     },
 
-//    "custom/notifications": {
-//	"format": "\ueaa2  ",
-//	"on-click": "swaync-client -t"
-//    },
+    "custom/notifications": {
+	"format": "\ueaa2  ",
+	"on-click": "swaync-client -t"
+    },
 
     "hyprland/window": {
     	"max-length": 75,
@@ -60,6 +71,7 @@
     "custom/mullvad-vpn": {
 	"exec": "mullvad status",
 	"interval": 60,
+	"max-length": 10,
 	"on-click": "mullvad connect"
     },
 
@@ -81,12 +93,12 @@
 	"sort-by-number": true
     },
     "keyboard-state": {
-        "numlock": true,
+        "numlock": false,
         "capslock": true,
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
-            "unlocked": ""
+            "unlocked": "\uf13e"
         }
     },
     "mpd": {
@@ -128,11 +140,13 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+	"interval": 1,
+	"format": "{:%X | %A %B %d %Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
     },
+
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% \udb80\udf5b",
         "tooltip": false
     },
     "memory": {
@@ -144,7 +158,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["\uf2ca", "", "\uf2c7"]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -174,18 +188,26 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+
+    "wireplumber": {
+	"format": "{volume}% {icon}",
+	"format-muted": "",
+	"on-click": "pavucontrol",
+	"format-icons": ["", "", ""]
+    },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "\uf466 {icon} {format_source}",
+        "format-muted": "\uf466 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "",
+            "headset": "\udb80\udece",
             "phone": "",
             "portable": "",
             "car": "",
