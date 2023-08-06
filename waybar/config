@@ -27,11 +27,11 @@
 	"memory", 
 	"temperature", 
 	"backlight", 
-	"keyboard-state", 
+//	"keyboard-state", 
 	"battery", 
 	"custom/separator",
 	"tray",
-	"custom/notifications",
+//	"custom/notifications",
 	"custom/wlogout"
     ],
     // Modules configuration
@@ -39,8 +39,7 @@
     "custom/weather": {
 	"format": "{}",
 	"exec": "curl 'wttr.in/pdx?format=%c%t'",
-	"interval": 6000,
-	"on-click": "firefox https://openweathermap.org/"
+	"interval": 6000
     },
 
     "custom/gamemode": {
@@ -53,10 +52,10 @@
     	"on-click": "wlogout"
     },
 
-    "custom/notifications": {
-	"format": "\ueaa2  ",
-	"on-click": "swaync-client -t"
-    },
+//    "custom/notifications": {
+//	"format": "\ueaa2  ",
+//	"on-click": "swaync-client -t"
+//    },
 
     "hyprland/window": {
     	"max-length": 75,
@@ -92,6 +91,7 @@
         },
 	"sort-by-number": true
     },
+
     "keyboard-state": {
         "numlock": false,
         "capslock": true,
@@ -101,6 +101,7 @@
             "unlocked": "\uf13e"
         }
     },
+
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -134,10 +135,12 @@
             "deactivated": ""
         }
     },
+
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
+
     "clock": {
         // "timezone": "America/New_York",
 	"interval": 1,
@@ -149,9 +152,11 @@
         "format": "{usage}% \udb80\udf5b",
         "tooltip": false
     },
+
     "memory": {
         "format": "{}% "
     },
+
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -160,11 +165,13 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["\uf2ca", "", "\uf2c7"]
     },
+
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
+
     "battery": {
         "states": {
             // "good": 95,
@@ -179,6 +186,7 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
+
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -215,6 +223,7 @@
         },
         "on-click": "pavucontrol"
     },
+
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",

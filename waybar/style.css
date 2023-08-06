@@ -1,6 +1,5 @@
 * {
-    border: none;
-/*    border-radius: 16px; */
+/*    border-radius: 26px; */
 /*    font-family: SauceCodePro Nerd Font, FontAwesome; */
     font-family: Roboto Mono, FontAwesome;
     font-size: 14px;
@@ -46,14 +45,14 @@ tooltip label {
 
 #mode, #battery {
     background: transparent;
-    padding: 0 5px;
+    padding: 0 4px;
     color: white;
 }
 
 #clock {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 0 5px;
+    padding: 0 4px;
    
 }
 
@@ -65,6 +64,14 @@ tooltip label {
 #clock {
     border-radius: 16px; 
     background-color: transparent;
+}
+
+#cpu {
+    padding: 0 4px;
+}
+
+#network {
+    padding: 0 4px;
 }
 
 #battery {

@@ -1,0 +1,47 @@
+* {
+/*	border-radius: 26px;	*/
+	font-family: Roboto Mono, FontAwesome;
+	font-size: 14px;
+	font-weight: bold;
+
+}
+window {
+	margin: 5px;
+	border: 0px solid black;
+	background-color: transparent;
+}
+
+#input {
+	margin: 5px;
+	border: 2px solid white;
+	border-radius: 26px; 
+	background-color: black;
+}
+
+#inner-box {
+	margin: 0px;
+	border: 2px solid white;
+	border-radius: 26px; 
+	background-color: black;
+}
+
+#outer-box {
+	margin: 0px;
+	border: 0px solid black;
+/*	border-radius: 26px; */
+	background-color: transparent;
+}
+
+#scroll {
+	margin: 0px;
+	border-radius: 26px; 
+	border: 0px solid rgba(255, 161, 1, 0.95);
+	background-color: transparent;
+}
+
+#text {
+	margin: 0px;
+	border: 0px solid white;
+	background-color: transparent;
+} 
+

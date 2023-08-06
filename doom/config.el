@@ -114,7 +114,7 @@
   ;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
   ;;         a hookable mode anymore, you're advised to pick something yourself
   ;;         if you don't care about startup time, use
-  ;;  :hook (after-init . org-roam-ui-mode)
+  :hook (after-init . org-roam-ui-mode)
   :config
   (setq org-roam-ui-sync-theme t
         org-roam-ui-follow t
@@ -311,8 +311,8 @@
 (setq display-line-numbers-type 'relative)
 
 (setq doom-theme 'doom-one
-      doom-font (font-spec :family "RobotoMono Medium" :size 15)
-     doom-variable-pitch-font (font-spec :family "RobotoMono Medium" :size 15))
+      doom-font (font-spec :family "RobotoMono Nerd Font Mono" :size 15)
+     doom-variable-pitch-font (font-spec :family "RobotoMono Nerd Font Mono" :size 15))
 
 (after! doom-themes
   (setq doom-themes-enable-bold t
